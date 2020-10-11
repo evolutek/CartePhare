@@ -8,7 +8,7 @@
 #define INT         16
 
 #define BRIGHTNESS  255
-#define COLOR       CRGB::Orange;
+#define COLOR       CRGB::White;
 #define LED_PIN     6
 #define LED_TYPE    WS2812
 #define NB_LEDS     16
@@ -21,7 +21,7 @@
 #define STOP()      (analogWrite(PWM, 0))
 
 CRGB    leds[NB_LEDS];
-0
+
 void turn(int speed, int side) {
   digitalWrite(IN1, side);
   digitalWrite(IN2, !side);
@@ -61,6 +61,7 @@ void loop() {
         delay(50);
       }
 
+      delay(500);
       Serial.println("Stopping Motor");
       STOP();
     }
@@ -98,6 +99,7 @@ void loop() {
         delay(50);
       }
 
+      delay(500);
       Serial.println("Stopping Motor");
       STOP();
     }
